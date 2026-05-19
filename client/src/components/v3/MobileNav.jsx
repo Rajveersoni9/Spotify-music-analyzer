@@ -24,7 +24,7 @@ const MobileNav = ({ onFeatureSelect, activeFeature }) => {
 
   return (
     <div className="lg:hidden fixed bottom-0 left-0 w-full bg-black/80 backdrop-blur-xl border-t border-white/5 z-50 pb-safe">
-      <div className="flex justify-around items-center h-16 px-2">
+      <div className="flex justify-evenly items-center h-16 px-0 sm:px-2">
         {navItems.map((item, idx) => {
           const isActive = activeFeature === item.id || (!activeFeature && item.id === 'dashboard');
           return (
@@ -38,7 +38,7 @@ const MobileNav = ({ onFeatureSelect, activeFeature }) => {
               <div className={isActive ? 'drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]' : ''}>
                 {item.icon}
               </div>
-              <span className="text-[10px] font-medium tracking-tight truncate">{item.label}</span>
+              <span className="text-[9px] sm:text-[10px] font-medium tracking-tight truncate">{item.label}</span>
             </button>
           );
         })}

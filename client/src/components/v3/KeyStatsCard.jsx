@@ -30,7 +30,7 @@ const StatItem = ({ icon, label, value, isPercentage, delay, tooltipText, subtex
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5, type: "spring", stiffness: 100 }}
       whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
-      className="flex flex-col p-5 rounded-3xl bg-white/5 border border-white/5 transition-all duration-300 relative overflow-visible group z-10 hover:z-50"
+      className="flex flex-col p-3 sm:p-5 rounded-3xl bg-white/5 border border-white/5 transition-all duration-300 relative overflow-visible group z-10 hover:z-50"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/10 group-hover:to-transparent transition-all duration-500 rounded-3xl" />
       
@@ -71,7 +71,7 @@ const StatItem = ({ icon, label, value, isPercentage, delay, tooltipText, subtex
         <div className="p-2 rounded-xl bg-white/5 text-green-400 group-hover:scale-110 group-hover:bg-green-500/20 transition-all duration-300">{icon}</div>
         <span className="text-xs text-neutral-400 font-bold uppercase tracking-widest">{label}</span>
       </div>
-      <div className="relative z-10 text-3xl font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(34,197,94,0.3)] transition-all duration-300">
+      <div className="relative z-10 text-2xl sm:text-3xl font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(34,197,94,0.3)] transition-all duration-300">
         {typeof value === 'number' ? (
           <AnimatedCounter to={value} delay={delay + 0.2} />
         ) : (
@@ -86,7 +86,7 @@ const StatItem = ({ icon, label, value, isPercentage, delay, tooltipText, subtex
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: delay + 0.5 }}
-          className="relative z-10 mt-3 text-[10px] font-bold px-2.5 py-1 rounded-md bg-green-500/10 text-green-400 w-max border border-green-500/20 uppercase tracking-wider drop-shadow-md"
+          className="relative z-10 mt-2 sm:mt-3 text-[9px] sm:text-[10px] font-bold px-2 py-1 sm:px-2.5 sm:py-1 rounded-md bg-green-500/10 text-green-400 w-fit max-w-[100%] break-words whitespace-normal text-center border border-green-500/20 uppercase tracking-wider drop-shadow-md leading-tight"
         >
           {subtext}
         </motion.div>
@@ -104,7 +104,7 @@ const KeyStatsCard = ({ stats }) => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="p-8 rounded-[2.5rem] bg-black/40 border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden"
+      className="p-5 sm:p-8 rounded-[2.5rem] bg-black/40 border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden"
     >
       <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/5 rounded-full blur-[80px]" />
       <h3 className="text-xl font-black text-white mb-8 tracking-tight flex items-center gap-3">
